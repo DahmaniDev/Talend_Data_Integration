@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_9mVSoJukEeyayYuSsckGkw" name="Claims" id="_9l3_oJukEeyayYuSsckGkw" dataPackage="_9mVSoZukEeyayYuSsckGkw" Server="Localhost 127.0.0.1" FilePath="D:/PIB/Data/Claims.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" UseLimit="true" LimitValue="150" FirstLineCaption="true" SheetName="Claims" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Claims:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+    <sheetColumns>E</sheetColumns>
+    <sheetColumns>F</sheetColumns>
+    <sheetColumns>G</sheetColumns>
+    <sheetColumns>H</sheetColumns>
+    <sheetColumns>I</sheetColumns>
+    <sheetColumns>J</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_9mVSoZukEeyayYuSsckGkw" name="default" dataManager="_9mVSoJukEeyayYuSsckGkw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_9mVSopukEeyayYuSsckGkw" id="_3FVq0JukEeyayYuSsckGkw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSo5ukEeyayYuSsckGkw" label="Claim_id" length="4" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSpJukEeyayYuSsckGkw" label="CustomerID" length="7" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSpZukEeyayYuSsckGkw" label="BrokerID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSppukEeyayYuSsckGkw" label="Policy_id" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSp5ukEeyayYuSsckGkw" label="ProductID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSqJukEeyayYuSsckGkw" label="Status_Code" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSqZukEeyayYuSsckGkw" label="settlement_date" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSqpukEeyayYuSsckGkw" label="Claim_amount" length="8" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSq5ukEeyayYuSsckGkw" label="Paid_amount" length="8" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_9mVSrJukEeyayYuSsckGkw" label="Handled_by" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

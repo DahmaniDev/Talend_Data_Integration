@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_zlnZcaB3Eeyp_4_1T86pUw" name="Complains" id="_zlnZcKB3Eeyp_4_1T86pUw" dataPackage="_zlnZcqB3Eeyp_4_1T86pUw __f1s8KC9Eey-U_g78O9J1g" Server="Localhost 127.0.0.1" FilePath="D:/PIB/Data/Complains.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" UseLimit="true" LimitValue="13846" FirstLineCaption="true" SheetName="Complains Data" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Complains Data:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+    <sheetColumns>E</sheetColumns>
+    <sheetColumns>F</sheetColumns>
+    <sheetColumns>G</sheetColumns>
+    <sheetColumns>H</sheetColumns>
+    <sheetColumns>I</sheetColumns>
+    <sheetColumns>J</sheetColumns>
+    <sheetColumns>K</sheetColumns>
+    <sheetColumns>L</sheetColumns>
+    <sheetColumns>M</sheetColumns>
+    <sheetColumns>N</sheetColumns>
+    <sheetColumns>O</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_zlnZcqB3Eeyp_4_1T86pUw" name="default" dataManager="_zlnZcaB3Eeyp_4_1T86pUw"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="__f1s8KC9Eey-U_g78O9J1g" name="default" dataManager="_zlnZcaB3Eeyp_4_1T86pUw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="__f1s8aC9Eey-U_g78O9J1g" id="_2uvqwKC9Eey-U_g78O9J1g" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s8qC9Eey-U_g78O9J1g" label="ID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s86C9Eey-U_g78O9J1g" label="ComplainDate" length="-1" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s9KC9Eey-U_g78O9J1g" label="CompletionDate" length="28" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s9aC9Eey-U_g78O9J1g" label="CustomerID" length="7" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s9qC9Eey-U_g78O9J1g" label="BrokerID" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s96C9Eey-U_g78O9J1g" label="ProductID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s-KC9Eey-U_g78O9J1g" label="ComplainPriorityID" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s-aC9Eey-U_g78O9J1g" label="ComplainTypeID" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s-qC9Eey-U_g78O9J1g" label="ComplainSourceID" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s-6C9Eey-U_g78O9J1g" label="ComplainCategoryID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s_KC9Eey-U_g78O9J1g" label="ComplainStatusID" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s_aC9Eey-U_g78O9J1g" label="AdministratorID" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s_qC9Eey-U_g78O9J1g" label="ClientSatisfaction" length="3" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1s_6C9Eey-U_g78O9J1g" label="ExpectedReimbursement" length="-1" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__f1tAKC9Eey-U_g78O9J1g" label="Handled_By" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

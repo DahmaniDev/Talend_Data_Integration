@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_3q4gwZYmEeyr2KUayvSa_g" name="Products" id="_3q4gwJYmEeyr2KUayvSa_g" dataPackage="_3q4gwpYmEeyr2KUayvSa_g" Server="Localhost 127.0.0.1" FilePath="D:/PIB/Data/Products.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" UseLimit="true" LimitValue="77" FirstLineCaption="true" SheetName="Products" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Products:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_3q4gwpYmEeyr2KUayvSa_g" name="default" dataManager="_3q4gwZYmEeyr2KUayvSa_g">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_3q4gw5YmEeyr2KUayvSa_g" id="_bAqYAJYmEeyr2KUayvSa_g" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3q4gxJYmEeyr2KUayvSa_g" label="ProductID" length="2" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3q4gxZYmEeyr2KUayvSa_g" label="ProductCategory" length="20" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3q4gxpYmEeyr2KUayvSa_g" label="ProductSubCategory" length="23" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3q4gx5YmEeyr2KUayvSa_g" label="Product" length="7" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

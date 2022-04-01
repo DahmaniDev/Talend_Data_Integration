@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_b_tZ8ZunEeyayYuSsckGkw" name="Policies" dataPackage="_b_tZ8punEeyayYuSsckGkw" Server="Localhost 127.0.0.1" FilePath="D:/PIB/Data/Policies.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" UseLimit="true" LimitValue="150" FirstLineCaption="true" SheetName="Policies" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Policies:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_b_tZ8punEeyayYuSsckGkw" name="default" dataManager="_b_tZ8ZunEeyayYuSsckGkw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_b_tZ85unEeyayYuSsckGkw" id="_R27zIJunEeyayYuSsckGkw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b_tZ9JunEeyayYuSsckGkw" label="Policy_id" length="4" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b_tZ9ZunEeyayYuSsckGkw" label="Type" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b_tZ9punEeyayYuSsckGkw" label="Policy_start_date" length="29" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_b_tZ95unEeyayYuSsckGkw" label="Policy_Renewal_date" length="29" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
