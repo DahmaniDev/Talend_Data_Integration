@@ -31,6 +31,7 @@
     <module>jobs/process/StagingArea/alimenter_statuses_0.1</module>
     <module>jobs/process/DataWarehouse/dim_profile_0.1</module>
     <module>jobs/process/DataWarehouse/dim_customers_p_0.1</module>
+    <module>jobs/process/DataWarehouse/dim_policies_type_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ETL_PIB</talend.project.name>

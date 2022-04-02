@@ -60,6 +60,10 @@
     "type" : "job"
   },
   "relatedItems" : [ {
+    "id" : "_H8XT8LE-EeyRCLikWHXsig",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
     "id" : "_xWswMJuoEeyayYuSsckGkw",
     "version" : "Latest",
     "type" : "property"
@@ -103,6 +107,10 @@
     "id" : "TalendStringUtil",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_H8XT8LE-EeyRCLikWHXsig - metadata1",
+    "version" : "Latest",
+    "type" : "schema"
   }, {
     "id" : "_xWswMJuoEeyayYuSsckGkw - Dim_Brokers",
     "version" : "Latest",
@@ -239,6 +247,61 @@
     "type" : "routine"
   }, {
     "id" : "_3q4gwJYmEeyr2KUayvSa_g - metadata",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_B7hioLKNEey9-vRt36eOxQ",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_OLXjoLKNEey9-vRt36eOxQ",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_xWswMJuoEeyayYuSsckGkw",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "DataOperation",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "Mathematical",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "Numeric",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "Relational",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "StringHandling",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "TalendDataGenerator",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "TalendDate",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "TalendString",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "TalendStringUtil",
+    "version" : "Latest",
+    "type" : "routine"
+  }, {
+    "id" : "_OLXjoLKNEey9-vRt36eOxQ - metadata",
     "version" : "Latest",
     "type" : "schema"
   } ]
@@ -807,6 +870,10 @@
     "id" : "TalendStringUtil",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_xWswMJuoEeyayYuSsckGkw - Dim_Policies_Types",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {

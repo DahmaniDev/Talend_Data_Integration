@@ -350,6 +350,16 @@ public class Fact_Complains implements TalendJob {
 		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tFileInputExcel_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tAdvancedHash_row3_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -391,6 +401,16 @@ public class Fact_Complains implements TalendJob {
 	}
 
 	public void tAdvancedHash_row7_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tAdvancedHash_row8_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -466,6 +486,36 @@ public class Fact_Complains implements TalendJob {
 			return this.ExpectedReimbursement;
 		}
 
+		public Float Change_Freq;
+
+		public Float getChange_Freq() {
+			return this.Change_Freq;
+		}
+
+		public Float Services_Sat_Rate_On5;
+
+		public Float getServices_Sat_Rate_On5() {
+			return this.Services_Sat_Rate_On5;
+		}
+
+		public Float Complain_Sat_Rate;
+
+		public Float getComplain_Sat_Rate() {
+			return this.Complain_Sat_Rate;
+		}
+
+		public Float Res_Time_Days_Expected;
+
+		public Float getRes_Time_Days_Expected() {
+			return this.Res_Time_Days_Expected;
+		}
+
+		public Float Price_Sat_Rate;
+
+		public Float getPrice_Sat_Rate() {
+			return this.Price_Sat_Rate;
+		}
+
 		@Override
 		public int hashCode() {
 			if (this.hashCodeDirty) {
@@ -536,6 +586,11 @@ public class Fact_Complains implements TalendJob {
 			other.ProductID = this.ProductID;
 			other.ClientSatisfaction = this.ClientSatisfaction;
 			other.ExpectedReimbursement = this.ExpectedReimbursement;
+			other.Change_Freq = this.Change_Freq;
+			other.Services_Sat_Rate_On5 = this.Services_Sat_Rate_On5;
+			other.Complain_Sat_Rate = this.Complain_Sat_Rate;
+			other.Res_Time_Days_Expected = this.Res_Time_Days_Expected;
+			other.Price_Sat_Rate = this.Price_Sat_Rate;
 
 		}
 
@@ -630,6 +685,41 @@ public class Fact_Complains implements TalendJob {
 						this.ExpectedReimbursement = dis.readFloat();
 					}
 
+					length = dis.readByte();
+					if (length == -1) {
+						this.Change_Freq = null;
+					} else {
+						this.Change_Freq = dis.readFloat();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Services_Sat_Rate_On5 = null;
+					} else {
+						this.Services_Sat_Rate_On5 = dis.readFloat();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Complain_Sat_Rate = null;
+					} else {
+						this.Complain_Sat_Rate = dis.readFloat();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Res_Time_Days_Expected = null;
+					} else {
+						this.Res_Time_Days_Expected = dis.readFloat();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Price_Sat_Rate = null;
+					} else {
+						this.Price_Sat_Rate = dis.readFloat();
+					}
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -679,6 +769,51 @@ public class Fact_Complains implements TalendJob {
 					dos.writeFloat(this.ExpectedReimbursement);
 				}
 
+				// Float
+
+				if (this.Change_Freq == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Change_Freq);
+				}
+
+				// Float
+
+				if (this.Services_Sat_Rate_On5 == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Services_Sat_Rate_On5);
+				}
+
+				// Float
+
+				if (this.Complain_Sat_Rate == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Complain_Sat_Rate);
+				}
+
+				// Float
+
+				if (this.Res_Time_Days_Expected == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Res_Time_Days_Expected);
+				}
+
+				// Float
+
+				if (this.Price_Sat_Rate == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Price_Sat_Rate);
+				}
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -698,6 +833,11 @@ public class Fact_Complains implements TalendJob {
 			sb.append(",ProductID=" + String.valueOf(ProductID));
 			sb.append(",ClientSatisfaction=" + ClientSatisfaction);
 			sb.append(",ExpectedReimbursement=" + String.valueOf(ExpectedReimbursement));
+			sb.append(",Change_Freq=" + String.valueOf(Change_Freq));
+			sb.append(",Services_Sat_Rate_On5=" + String.valueOf(Services_Sat_Rate_On5));
+			sb.append(",Complain_Sat_Rate=" + String.valueOf(Complain_Sat_Rate));
+			sb.append(",Res_Time_Days_Expected=" + String.valueOf(Res_Time_Days_Expected));
+			sb.append(",Price_Sat_Rate=" + String.valueOf(Price_Sat_Rate));
 			sb.append("]");
 
 			return sb.toString();
@@ -1842,6 +1982,7 @@ public class Fact_Complains implements TalendJob {
 				tDBInput_4Process(globalMap);
 				tDBInput_5Process(globalMap);
 				tDBInput_6Process(globalMap);
+				tFileInputExcel_2Process(globalMap);
 
 				row1Struct row1 = new row1Struct();
 				row2Struct row2 = new row2Struct();
@@ -1898,7 +2039,7 @@ public class Fact_Complains implements TalendJob {
 				dbUser_tDBOutput_1 = "postgres";
 
 				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:S9FNiZeI/O8FPwqDrn7Zq4qDsN1NUtR04AL35QqC8ms=");
+						.decryptPassword("enc:routine.encryption.key.v1:UCihWuvpcUf+ElwbpKk3WJqS2c+iZY1aIR3h6LRte8g=");
 
 				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
 
@@ -1944,19 +2085,19 @@ public class Fact_Complains implements TalendJob {
 				}
 				try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
 					stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1
-							+ "\"(\"ID\" INT4 ,\"ComplainDateID\" INT4  not null ,\"CompletionDateID\" INT4  not null ,\"BrokerID\" INT4  not null ,\"CustomerID\" INT4  not null ,\"ProductID\" INT4  not null ,\"ClientSatisfaction\" VARCHAR(3)  ,\"ExpectedReimbursement\" FLOAT4 ,primary key(\"ID\",\"ComplainDateID\",\"CompletionDateID\",\"BrokerID\",\"CustomerID\",\"ProductID\"))");
+							+ "\"(\"ID\" INT4 ,\"ComplainDateID\" INT4  not null ,\"CompletionDateID\" INT4  not null ,\"BrokerID\" INT4  not null ,\"CustomerID\" INT4  not null ,\"ProductID\" INT4  not null ,\"ClientSatisfaction\" VARCHAR(3)  ,\"ExpectedReimbursement\" FLOAT4 ,\"Change_Freq\" FLOAT4 ,\"Services_Sat_Rate_On5\" FLOAT4 ,\"Complain_Sat_Rate\" FLOAT4 ,\"Res_Time_Days_Expected\" FLOAT4 ,\"Price_Sat_Rate\" FLOAT4 ,primary key(\"ID\",\"ComplainDateID\",\"CompletionDateID\",\"BrokerID\",\"CustomerID\",\"ProductID\"))");
 				}
 				java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1
 						.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1
 								+ "\" WHERE \"ID\" = ? AND \"ComplainDateID\" = ? AND \"CompletionDateID\" = ? AND \"BrokerID\" = ? AND \"CustomerID\" = ? AND \"ProductID\" = ?");
 				resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
 				String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1
-						+ "\" (\"ID\",\"ComplainDateID\",\"CompletionDateID\",\"BrokerID\",\"CustomerID\",\"ProductID\",\"ClientSatisfaction\",\"ExpectedReimbursement\") VALUES (?,?,?,?,?,?,?,?)";
+						+ "\" (\"ID\",\"ComplainDateID\",\"CompletionDateID\",\"BrokerID\",\"CustomerID\",\"ProductID\",\"ClientSatisfaction\",\"ExpectedReimbursement\",\"Change_Freq\",\"Services_Sat_Rate_On5\",\"Complain_Sat_Rate\",\"Res_Time_Days_Expected\",\"Price_Sat_Rate\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1
 						.prepareStatement(insert_tDBOutput_1);
 				resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
 				String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1
-						+ "\" SET \"ClientSatisfaction\" = ?,\"ExpectedReimbursement\" = ? WHERE \"ID\" = ? AND \"ComplainDateID\" = ? AND \"CompletionDateID\" = ? AND \"BrokerID\" = ? AND \"CustomerID\" = ? AND \"ProductID\" = ?";
+						+ "\" SET \"ClientSatisfaction\" = ?,\"ExpectedReimbursement\" = ?,\"Change_Freq\" = ?,\"Services_Sat_Rate_On5\" = ?,\"Complain_Sat_Rate\" = ?,\"Res_Time_Days_Expected\" = ?,\"Price_Sat_Rate\" = ? WHERE \"ID\" = ? AND \"ComplainDateID\" = ? AND \"CompletionDateID\" = ? AND \"BrokerID\" = ? AND \"CustomerID\" = ? AND \"ProductID\" = ?";
 				java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1
 						.prepareStatement(update_tDBOutput_1);
 				resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
@@ -2012,6 +2153,12 @@ public class Fact_Complains implements TalendJob {
 
 				row7Struct row7HashKey = new row7Struct();
 				row7Struct row7Default = new row7Struct();
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) globalMap
+						.get("tHash_Lookup_row8"));
+
+				row8Struct row8HashKey = new row8Struct();
+				row8Struct row8Default = new row8Struct();
 // ###############################        
 
 // ###############################
@@ -2104,7 +2251,7 @@ public class Fact_Complains implements TalendJob {
 				int tos_count_tFileInputExcel_1 = 0;
 
 				final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:/gpCrUqDBlXiym2SoSzP/RLKzFB235OLXCFKyQ==");
+						.decryptPassword("enc:routine.encryption.key.v1:W+zr/yEN90tLFtwDB3L5xoHlDTowLsi7TkDGAQ==");
 				String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
 				if (password_tFileInputExcel_1.isEmpty()) {
 					password_tFileInputExcel_1 = null;
@@ -2993,227 +3140,373 @@ public class Fact_Complains implements TalendJob {
 														row7 = fromLookup_row7;
 													}
 
-													// ###############################
-													{ // start of Var scope
+													///////////////////////////////////////////////
+													// Starting Lookup Table "row8"
+													///////////////////////////////////////////////
+
+													boolean forceLooprow8 = false;
+
+													row8Struct row8ObjectFromLookup = null;
+
+													if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+														hasCasePrimitiveKeyWithNull_tMap_1 = false;
+
+														row8HashKey.Profile_Code = row4.ProfileID;
+
+														row8HashKey.hashCodeDirty = true;
+
+														tHash_Lookup_row8.lookup(row8HashKey);
+
+														if (!tHash_Lookup_row8.hasNext()) { // G_TM_M_090
+
+															rejectedInnerJoin_tMap_1 = true;
+
+															forceLooprow8 = true;
+
+														} // G_TM_M_090
+
+													} // G_TM_M_020
+
+													else { // G 20 - G 21
+														forceLooprow8 = true;
+													} // G 21
+
+													row8Struct row8 = null;
+
+													while ((tHash_Lookup_row8 != null && tHash_Lookup_row8.hasNext())
+															|| forceLooprow8) { // G_TM_M_043
+
+														// CALL close loop of lookup 'row8'
+
+														row8Struct fromLookup_row8 = null;
+														row8 = row8Default;
+
+														if (!forceLooprow8) { // G 46
+
+															fromLookup_row8 = tHash_Lookup_row8.next();
+
+															if (fromLookup_row8 != null) {
+																row8 = fromLookup_row8;
+															}
+
+														} // G 46
+
+														forceLooprow8 = false;
 
 														// ###############################
-														// # Vars tables
+														{ // start of Var scope
 
-														Var__tMap_1__Struct Var = Var__tMap_1;
-														Var.var1 = null;// ###############################
-														// ###############################
-														// # Output tables
+															// ###############################
+															// # Vars tables
 
-														Fact_Complains = null;
+															Var__tMap_1__Struct Var = Var__tMap_1;
+															Var.var1 = null;// ###############################
+															// ###############################
+															// # Output tables
 
-														if (!rejectedInnerJoin_tMap_1) {
+															Fact_Complains = null;
+
+															if (!rejectedInnerJoin_tMap_1) {
 
 // # Output table : 'Fact_Complains'
-															Fact_Complains_tmp.ID = row2.ID;
-															Fact_Complains_tmp.ComplainDateID = row5.DateID;
-															Fact_Complains_tmp.CompletionDateID = row7.DateID;
-															Fact_Complains_tmp.BrokerID = row3.BrokerID;
-															Fact_Complains_tmp.CustomerID = row4.CustomerID;
-															Fact_Complains_tmp.ProductID = row6.ProductID;
-															Fact_Complains_tmp.ClientSatisfaction = row2.ClientSatisfaction;
-															Fact_Complains_tmp.ExpectedReimbursement = row2.ExpectedReimbursement;
-															Fact_Complains = Fact_Complains_tmp;
-														} // closing inner join bracket (2)
+																Fact_Complains_tmp.ID = row2.ID;
+																Fact_Complains_tmp.ComplainDateID = row5.DateID;
+																Fact_Complains_tmp.CompletionDateID = row7.DateID;
+																Fact_Complains_tmp.BrokerID = row3.BrokerID;
+																Fact_Complains_tmp.CustomerID = row4.CustomerID;
+																Fact_Complains_tmp.ProductID = row6.ProductID;
+																Fact_Complains_tmp.ClientSatisfaction = row2.ClientSatisfaction;
+																Fact_Complains_tmp.ExpectedReimbursement = row2.ExpectedReimbursement;
+																Fact_Complains_tmp.Change_Freq = row8.Change_Freq;
+																Fact_Complains_tmp.Services_Sat_Rate_On5 = row8.Services_Sat_Rate_On5;
+																Fact_Complains_tmp.Complain_Sat_Rate = row8.Complain_Sat_Rate;
+																Fact_Complains_tmp.Res_Time_Days_Expected = row8.Res_Time_Days_Expected;
+																Fact_Complains_tmp.Price_Sat_Rate = row8.Price_Sat_Rate;
+																Fact_Complains = Fact_Complains_tmp;
+															} // closing inner join bracket (2)
 // ###############################
 
-													} // end of Var scope
+														} // end of Var scope
 
-													rejectedInnerJoin_tMap_1 = false;
+														rejectedInnerJoin_tMap_1 = false;
 
-													tos_count_tMap_1++;
+														tos_count_tMap_1++;
 
-													/**
-													 * [tMap_1 main ] stop
-													 */
+														/**
+														 * [tMap_1 main ] stop
+														 */
 
-													/**
-													 * [tMap_1 process_data_begin ] start
-													 */
+														/**
+														 * [tMap_1 process_data_begin ] start
+														 */
 
-													currentComponent = "tMap_1";
+														currentComponent = "tMap_1";
 
-													/**
-													 * [tMap_1 process_data_begin ] stop
-													 */
+														/**
+														 * [tMap_1 process_data_begin ] stop
+														 */
 // Start of branch "Fact_Complains"
-													if (Fact_Complains != null) {
+														if (Fact_Complains != null) {
 
-														/**
-														 * [tDBOutput_1 main ] start
-														 */
+															/**
+															 * [tDBOutput_1 main ] start
+															 */
 
-														currentComponent = "tDBOutput_1";
+															currentComponent = "tDBOutput_1";
 
-														if (execStat) {
-															runStat.updateStatOnConnection(iterateId, 1, 1,
-																	"Fact_Complains");
-														}
-
-														whetherReject_tDBOutput_1 = false;
-														if (Fact_Complains.ID == null) {
-															pstmt_tDBOutput_1.setNull(1, java.sql.Types.INTEGER);
-														} else {
-															pstmt_tDBOutput_1.setInt(1, Fact_Complains.ID);
-														}
-
-														pstmt_tDBOutput_1.setInt(2, Fact_Complains.ComplainDateID);
-
-														pstmt_tDBOutput_1.setInt(3, Fact_Complains.CompletionDateID);
-
-														pstmt_tDBOutput_1.setInt(4, Fact_Complains.BrokerID);
-
-														pstmt_tDBOutput_1.setInt(5, Fact_Complains.CustomerID);
-
-														pstmt_tDBOutput_1.setInt(6, Fact_Complains.ProductID);
-
-														int checkCount_tDBOutput_1 = -1;
-														try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1
-																.executeQuery()) {
-															while (rs_tDBOutput_1.next()) {
-																checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
-															}
-														}
-														if (checkCount_tDBOutput_1 > 0) {
-															if (Fact_Complains.ClientSatisfaction == null) {
-																pstmtUpdate_tDBOutput_1.setNull(1,
-																		java.sql.Types.VARCHAR);
-															} else {
-																pstmtUpdate_tDBOutput_1.setString(1,
-																		Fact_Complains.ClientSatisfaction);
+															if (execStat) {
+																runStat.updateStatOnConnection(iterateId, 1, 1,
+																		"Fact_Complains");
 															}
 
-															if (Fact_Complains.ExpectedReimbursement == null) {
-																pstmtUpdate_tDBOutput_1.setNull(2,
-																		java.sql.Types.FLOAT);
-															} else {
-																pstmtUpdate_tDBOutput_1.setFloat(2,
-																		Fact_Complains.ExpectedReimbursement);
-															}
-
+															whetherReject_tDBOutput_1 = false;
 															if (Fact_Complains.ID == null) {
-																pstmtUpdate_tDBOutput_1.setNull(3 + count_tDBOutput_1,
-																		java.sql.Types.INTEGER);
+																pstmt_tDBOutput_1.setNull(1, java.sql.Types.INTEGER);
 															} else {
-																pstmtUpdate_tDBOutput_1.setInt(3 + count_tDBOutput_1,
-																		Fact_Complains.ID);
+																pstmt_tDBOutput_1.setInt(1, Fact_Complains.ID);
 															}
 
-															pstmtUpdate_tDBOutput_1.setInt(4 + count_tDBOutput_1,
-																	Fact_Complains.ComplainDateID);
+															pstmt_tDBOutput_1.setInt(2, Fact_Complains.ComplainDateID);
 
-															pstmtUpdate_tDBOutput_1.setInt(5 + count_tDBOutput_1,
+															pstmt_tDBOutput_1.setInt(3,
 																	Fact_Complains.CompletionDateID);
 
-															pstmtUpdate_tDBOutput_1.setInt(6 + count_tDBOutput_1,
-																	Fact_Complains.BrokerID);
+															pstmt_tDBOutput_1.setInt(4, Fact_Complains.BrokerID);
 
-															pstmtUpdate_tDBOutput_1.setInt(7 + count_tDBOutput_1,
-																	Fact_Complains.CustomerID);
+															pstmt_tDBOutput_1.setInt(5, Fact_Complains.CustomerID);
 
-															pstmtUpdate_tDBOutput_1.setInt(8 + count_tDBOutput_1,
-																	Fact_Complains.ProductID);
+															pstmt_tDBOutput_1.setInt(6, Fact_Complains.ProductID);
 
-															try {
-
-																updatedCount_tDBOutput_1 = updatedCount_tDBOutput_1
-																		+ pstmtUpdate_tDBOutput_1.executeUpdate();
-																nb_line_tDBOutput_1++;
-
-															} catch (java.lang.Exception e) {
-
-																whetherReject_tDBOutput_1 = true;
-																nb_line_tDBOutput_1++;
-																System.err.print(e.getMessage());
+															int checkCount_tDBOutput_1 = -1;
+															try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1
+																	.executeQuery()) {
+																while (rs_tDBOutput_1.next()) {
+																	checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
+																}
 															}
-														} else {
-															if (Fact_Complains.ID == null) {
-																pstmtInsert_tDBOutput_1.setNull(1,
-																		java.sql.Types.INTEGER);
+															if (checkCount_tDBOutput_1 > 0) {
+																if (Fact_Complains.ClientSatisfaction == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(1,
+																			java.sql.Types.VARCHAR);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setString(1,
+																			Fact_Complains.ClientSatisfaction);
+																}
+
+																if (Fact_Complains.ExpectedReimbursement == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(2,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(2,
+																			Fact_Complains.ExpectedReimbursement);
+																}
+
+																if (Fact_Complains.Change_Freq == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(3,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(3,
+																			Fact_Complains.Change_Freq);
+																}
+
+																if (Fact_Complains.Services_Sat_Rate_On5 == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(4,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(4,
+																			Fact_Complains.Services_Sat_Rate_On5);
+																}
+
+																if (Fact_Complains.Complain_Sat_Rate == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(5,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(5,
+																			Fact_Complains.Complain_Sat_Rate);
+																}
+
+																if (Fact_Complains.Res_Time_Days_Expected == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(6,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(6,
+																			Fact_Complains.Res_Time_Days_Expected);
+																}
+
+																if (Fact_Complains.Price_Sat_Rate == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(7,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setFloat(7,
+																			Fact_Complains.Price_Sat_Rate);
+																}
+
+																if (Fact_Complains.ID == null) {
+																	pstmtUpdate_tDBOutput_1.setNull(
+																			8 + count_tDBOutput_1,
+																			java.sql.Types.INTEGER);
+																} else {
+																	pstmtUpdate_tDBOutput_1.setInt(
+																			8 + count_tDBOutput_1, Fact_Complains.ID);
+																}
+
+																pstmtUpdate_tDBOutput_1.setInt(9 + count_tDBOutput_1,
+																		Fact_Complains.ComplainDateID);
+
+																pstmtUpdate_tDBOutput_1.setInt(10 + count_tDBOutput_1,
+																		Fact_Complains.CompletionDateID);
+
+																pstmtUpdate_tDBOutput_1.setInt(11 + count_tDBOutput_1,
+																		Fact_Complains.BrokerID);
+
+																pstmtUpdate_tDBOutput_1.setInt(12 + count_tDBOutput_1,
+																		Fact_Complains.CustomerID);
+
+																pstmtUpdate_tDBOutput_1.setInt(13 + count_tDBOutput_1,
+																		Fact_Complains.ProductID);
+
+																try {
+
+																	updatedCount_tDBOutput_1 = updatedCount_tDBOutput_1
+																			+ pstmtUpdate_tDBOutput_1.executeUpdate();
+																	nb_line_tDBOutput_1++;
+
+																} catch (java.lang.Exception e) {
+
+																	whetherReject_tDBOutput_1 = true;
+																	nb_line_tDBOutput_1++;
+																	System.err.print(e.getMessage());
+																}
 															} else {
-																pstmtInsert_tDBOutput_1.setInt(1, Fact_Complains.ID);
+																if (Fact_Complains.ID == null) {
+																	pstmtInsert_tDBOutput_1.setNull(1,
+																			java.sql.Types.INTEGER);
+																} else {
+																	pstmtInsert_tDBOutput_1.setInt(1,
+																			Fact_Complains.ID);
+																}
+
+																pstmtInsert_tDBOutput_1.setInt(2,
+																		Fact_Complains.ComplainDateID);
+
+																pstmtInsert_tDBOutput_1.setInt(3,
+																		Fact_Complains.CompletionDateID);
+
+																pstmtInsert_tDBOutput_1.setInt(4,
+																		Fact_Complains.BrokerID);
+
+																pstmtInsert_tDBOutput_1.setInt(5,
+																		Fact_Complains.CustomerID);
+
+																pstmtInsert_tDBOutput_1.setInt(6,
+																		Fact_Complains.ProductID);
+
+																if (Fact_Complains.ClientSatisfaction == null) {
+																	pstmtInsert_tDBOutput_1.setNull(7,
+																			java.sql.Types.VARCHAR);
+																} else {
+																	pstmtInsert_tDBOutput_1.setString(7,
+																			Fact_Complains.ClientSatisfaction);
+																}
+
+																if (Fact_Complains.ExpectedReimbursement == null) {
+																	pstmtInsert_tDBOutput_1.setNull(8,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(8,
+																			Fact_Complains.ExpectedReimbursement);
+																}
+
+																if (Fact_Complains.Change_Freq == null) {
+																	pstmtInsert_tDBOutput_1.setNull(9,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(9,
+																			Fact_Complains.Change_Freq);
+																}
+
+																if (Fact_Complains.Services_Sat_Rate_On5 == null) {
+																	pstmtInsert_tDBOutput_1.setNull(10,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(10,
+																			Fact_Complains.Services_Sat_Rate_On5);
+																}
+
+																if (Fact_Complains.Complain_Sat_Rate == null) {
+																	pstmtInsert_tDBOutput_1.setNull(11,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(11,
+																			Fact_Complains.Complain_Sat_Rate);
+																}
+
+																if (Fact_Complains.Res_Time_Days_Expected == null) {
+																	pstmtInsert_tDBOutput_1.setNull(12,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(12,
+																			Fact_Complains.Res_Time_Days_Expected);
+																}
+
+																if (Fact_Complains.Price_Sat_Rate == null) {
+																	pstmtInsert_tDBOutput_1.setNull(13,
+																			java.sql.Types.FLOAT);
+																} else {
+																	pstmtInsert_tDBOutput_1.setFloat(13,
+																			Fact_Complains.Price_Sat_Rate);
+																}
+
+																try {
+
+																	insertedCount_tDBOutput_1 = insertedCount_tDBOutput_1
+																			+ pstmtInsert_tDBOutput_1.executeUpdate();
+																	nb_line_tDBOutput_1++;
+
+																} catch (java.lang.Exception e) {
+
+																	whetherReject_tDBOutput_1 = true;
+																	nb_line_tDBOutput_1++;
+																	System.err.print(e.getMessage());
+																}
+															}
+															commitCounter_tDBOutput_1++;
+															if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
+																conn_tDBOutput_1.commit();
+
+																commitCounter_tDBOutput_1 = 0;
 															}
 
-															pstmtInsert_tDBOutput_1.setInt(2,
-																	Fact_Complains.ComplainDateID);
+															tos_count_tDBOutput_1++;
 
-															pstmtInsert_tDBOutput_1.setInt(3,
-																	Fact_Complains.CompletionDateID);
+															/**
+															 * [tDBOutput_1 main ] stop
+															 */
 
-															pstmtInsert_tDBOutput_1.setInt(4, Fact_Complains.BrokerID);
+															/**
+															 * [tDBOutput_1 process_data_begin ] start
+															 */
 
-															pstmtInsert_tDBOutput_1.setInt(5,
-																	Fact_Complains.CustomerID);
+															currentComponent = "tDBOutput_1";
 
-															pstmtInsert_tDBOutput_1.setInt(6, Fact_Complains.ProductID);
+															/**
+															 * [tDBOutput_1 process_data_begin ] stop
+															 */
 
-															if (Fact_Complains.ClientSatisfaction == null) {
-																pstmtInsert_tDBOutput_1.setNull(7,
-																		java.sql.Types.VARCHAR);
-															} else {
-																pstmtInsert_tDBOutput_1.setString(7,
-																		Fact_Complains.ClientSatisfaction);
-															}
+															/**
+															 * [tDBOutput_1 process_data_end ] start
+															 */
 
-															if (Fact_Complains.ExpectedReimbursement == null) {
-																pstmtInsert_tDBOutput_1.setNull(8,
-																		java.sql.Types.FLOAT);
-															} else {
-																pstmtInsert_tDBOutput_1.setFloat(8,
-																		Fact_Complains.ExpectedReimbursement);
-															}
+															currentComponent = "tDBOutput_1";
 
-															try {
+															/**
+															 * [tDBOutput_1 process_data_end ] stop
+															 */
 
-																insertedCount_tDBOutput_1 = insertedCount_tDBOutput_1
-																		+ pstmtInsert_tDBOutput_1.executeUpdate();
-																nb_line_tDBOutput_1++;
+														} // End of branch "Fact_Complains"
 
-															} catch (java.lang.Exception e) {
-
-																whetherReject_tDBOutput_1 = true;
-																nb_line_tDBOutput_1++;
-																System.err.print(e.getMessage());
-															}
-														}
-														commitCounter_tDBOutput_1++;
-														if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
-															conn_tDBOutput_1.commit();
-
-															commitCounter_tDBOutput_1 = 0;
-														}
-
-														tos_count_tDBOutput_1++;
-
-														/**
-														 * [tDBOutput_1 main ] stop
-														 */
-
-														/**
-														 * [tDBOutput_1 process_data_begin ] start
-														 */
-
-														currentComponent = "tDBOutput_1";
-
-														/**
-														 * [tDBOutput_1 process_data_begin ] stop
-														 */
-
-														/**
-														 * [tDBOutput_1 process_data_end ] start
-														 */
-
-														currentComponent = "tDBOutput_1";
-
-														/**
-														 * [tDBOutput_1 process_data_end ] stop
-														 */
-
-													} // End of branch "Fact_Complains"
+													} // close loop of lookup 'row8' // G_TM_M_043
 
 												} // close loop of lookup 'row6' // G_TM_M_043
 
@@ -3338,6 +3631,11 @@ public class Fact_Complains implements TalendJob {
 				}
 				globalMap.remove("tHash_Lookup_row7");
 
+				if (tHash_Lookup_row8 != null) {
+					tHash_Lookup_row8.endGet();
+				}
+				globalMap.remove("tHash_Lookup_row8");
+
 // ###############################      
 
 				if (execStat) {
@@ -3427,6 +3725,9 @@ public class Fact_Complains implements TalendJob {
 
 			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row7");
+
+			// free memory for "tMap_1"
+			globalMap.remove("tHash_Lookup_row8");
 
 			try {
 
@@ -3804,7 +4105,7 @@ public class Fact_Complains implements TalendJob {
 				// connection name:row3
 				// source node:tDBInput_2 - inputs:(after_tFileInputExcel_1) outputs:(row3,row3)
 				// | target node:tAdvancedHash_row3 - inputs:(row3) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7)
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
 				// outputs:(Fact_Complains)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
@@ -3836,7 +4137,7 @@ public class Fact_Complains implements TalendJob {
 				String dbUser_tDBInput_2 = "postgres";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:xjWL3kBxzvP4iS835QIDHoky/2V29JTYThLKqQHbWDM=");
+						.decryptPassword("enc:routine.encryption.key.v1:JJhrCKKun+SWsp6USMER8mLz43UsNaQQHAibKjmTkV8=");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -4410,7 +4711,7 @@ public class Fact_Complains implements TalendJob {
 				// connection name:row4
 				// source node:tDBInput_3 - inputs:(after_tFileInputExcel_1) outputs:(row4,row4)
 				// | target node:tAdvancedHash_row4 - inputs:(row4) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7)
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
 				// outputs:(Fact_Complains)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
@@ -4442,7 +4743,7 @@ public class Fact_Complains implements TalendJob {
 				String dbUser_tDBInput_3 = "postgres";
 
 				final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:l6NJlPK6Lp/31h9g6oNE+AHf6umj0E+SuOwrn7+zV4k=");
+						.decryptPassword("enc:routine.encryption.key.v1:8VYIWlKkc8kOfdwMH6kKDqPEvXxOSunm8wQIEpVtTQ0=");
 
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 
@@ -5099,7 +5400,7 @@ public class Fact_Complains implements TalendJob {
 				// connection name:row5
 				// source node:tDBInput_4 - inputs:(after_tFileInputExcel_1) outputs:(row5,row5)
 				// | target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7)
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
 				// outputs:(Fact_Complains)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
@@ -5131,7 +5432,7 @@ public class Fact_Complains implements TalendJob {
 				String dbUser_tDBInput_4 = "postgres";
 
 				final String decryptedPassword_tDBInput_4 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:xWSA/Ukczz2A4BU3K0ZFe4AqMimqcR53QO4Ze6urRW4=");
+						.decryptPassword("enc:routine.encryption.key.v1:h2hJE3Cml1Eq5M0P+xbrJcLZyhBAZRMO0xaRwJUyheM=");
 
 				String dbPwd_tDBInput_4 = decryptedPassword_tDBInput_4;
 
@@ -5773,7 +6074,7 @@ public class Fact_Complains implements TalendJob {
 				// connection name:row6
 				// source node:tDBInput_5 - inputs:(after_tFileInputExcel_1) outputs:(row6,row6)
 				// | target node:tAdvancedHash_row6 - inputs:(row6) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7)
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
 				// outputs:(Fact_Complains)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
@@ -5805,7 +6106,7 @@ public class Fact_Complains implements TalendJob {
 				String dbUser_tDBInput_5 = "postgres";
 
 				final String decryptedPassword_tDBInput_5 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:1G1pazQBGomQcGccu3VOf1RmJOYdJiO/SORXtl59Kig=");
+						.decryptPassword("enc:routine.encryption.key.v1:Np2H0ewdZcaqFd1xto/xMhaKBhz+Oy8lHX77bOXMeZs=");
 
 				String dbPwd_tDBInput_5 = decryptedPassword_tDBInput_5;
 
@@ -6462,7 +6763,7 @@ public class Fact_Complains implements TalendJob {
 				// connection name:row7
 				// source node:tDBInput_6 - inputs:(after_tFileInputExcel_1) outputs:(row7,row7)
 				// | target node:tAdvancedHash_row7 - inputs:(row7) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7)
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
 				// outputs:(Fact_Complains)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row7 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -6494,7 +6795,7 @@ public class Fact_Complains implements TalendJob {
 				String dbUser_tDBInput_6 = "postgres";
 
 				final String decryptedPassword_tDBInput_6 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:EM492VDtxBQLcN7ADVdFnAElFY/tdIgdnbu/2Ll+5Ng=");
+						.decryptPassword("enc:routine.encryption.key.v1:X44GYVq7hm/+HFmyA3ozKliTa+/GNRcep0WdHSfahak=");
 
 				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
 
@@ -6823,6 +7124,1008 @@ public class Fact_Complains implements TalendJob {
 		}
 
 		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row8Struct implements routines.system.IPersistableComparableLookupRow<row8Struct> {
+		final static byte[] commonByteArrayLock_ETL_PIB_Fact_Complains = new byte[0];
+		static byte[] commonByteArray_ETL_PIB_Fact_Complains = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public Integer Profile_Code;
+
+		public Integer getProfile_Code() {
+			return this.Profile_Code;
+		}
+
+		public String Sexe;
+
+		public String getSexe() {
+			return this.Sexe;
+		}
+
+		public String Age;
+
+		public String getAge() {
+			return this.Age;
+		}
+
+		public String Marital_Status;
+
+		public String getMarital_Status() {
+			return this.Marital_Status;
+		}
+
+		public Float Change_Freq;
+
+		public Float getChange_Freq() {
+			return this.Change_Freq;
+		}
+
+		public Float Services_Sat_Rate_On5;
+
+		public Float getServices_Sat_Rate_On5() {
+			return this.Services_Sat_Rate_On5;
+		}
+
+		public Float Complain_Sat_Rate;
+
+		public Float getComplain_Sat_Rate() {
+			return this.Complain_Sat_Rate;
+		}
+
+		public Float Res_Time_Days_Expected;
+
+		public Float getRes_Time_Days_Expected() {
+			return this.Res_Time_Days_Expected;
+		}
+
+		public Float Price_Sat_Rate;
+
+		public Float getPrice_Sat_Rate() {
+			return this.Price_Sat_Rate;
+		}
+
+		public String Type;
+
+		public String getType() {
+			return this.Type;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.Profile_Code == null) ? 0 : this.Profile_Code.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row8Struct other = (row8Struct) obj;
+
+			if (this.Profile_Code == null) {
+				if (other.Profile_Code != null)
+					return false;
+
+			} else if (!this.Profile_Code.equals(other.Profile_Code))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row8Struct other) {
+
+			other.Profile_Code = this.Profile_Code;
+			other.Sexe = this.Sexe;
+			other.Age = this.Age;
+			other.Marital_Status = this.Marital_Status;
+			other.Change_Freq = this.Change_Freq;
+			other.Services_Sat_Rate_On5 = this.Services_Sat_Rate_On5;
+			other.Complain_Sat_Rate = this.Complain_Sat_Rate;
+			other.Res_Time_Days_Expected = this.Res_Time_Days_Expected;
+			other.Price_Sat_Rate = this.Price_Sat_Rate;
+			other.Type = this.Type;
+
+		}
+
+		public void copyKeysDataTo(row8Struct other) {
+
+			other.Profile_Code = this.Profile_Code;
+
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ETL_PIB_Fact_Complains) {
+
+				try {
+
+					int length = 0;
+
+					this.Profile_Code = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.Profile_Code, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.Sexe = readString(dis, ois);
+
+				this.Age = readString(dis, ois);
+
+				this.Marital_Status = readString(dis, ois);
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.Change_Freq = null;
+				} else {
+					this.Change_Freq = dis.readFloat();
+				}
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.Services_Sat_Rate_On5 = null;
+				} else {
+					this.Services_Sat_Rate_On5 = dis.readFloat();
+				}
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.Complain_Sat_Rate = null;
+				} else {
+					this.Complain_Sat_Rate = dis.readFloat();
+				}
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.Res_Time_Days_Expected = null;
+				} else {
+					this.Res_Time_Days_Expected = dis.readFloat();
+				}
+
+				length = dis.readByte();
+				if (length == -1) {
+					this.Price_Sat_Rate = null;
+				} else {
+					this.Price_Sat_Rate = dis.readFloat();
+				}
+
+				this.Type = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				writeString(this.Sexe, dos, oos);
+
+				writeString(this.Age, dos, oos);
+
+				writeString(this.Marital_Status, dos, oos);
+
+				if (this.Change_Freq == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Change_Freq);
+				}
+
+				if (this.Services_Sat_Rate_On5 == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Services_Sat_Rate_On5);
+				}
+
+				if (this.Complain_Sat_Rate == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Complain_Sat_Rate);
+				}
+
+				if (this.Res_Time_Days_Expected == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Res_Time_Days_Expected);
+				}
+
+				if (this.Price_Sat_Rate == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeFloat(this.Price_Sat_Rate);
+				}
+
+				writeString(this.Type, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("Profile_Code=" + String.valueOf(Profile_Code));
+			sb.append(",Sexe=" + Sexe);
+			sb.append(",Age=" + Age);
+			sb.append(",Marital_Status=" + Marital_Status);
+			sb.append(",Change_Freq=" + String.valueOf(Change_Freq));
+			sb.append(",Services_Sat_Rate_On5=" + String.valueOf(Services_Sat_Rate_On5));
+			sb.append(",Complain_Sat_Rate=" + String.valueOf(Complain_Sat_Rate));
+			sb.append(",Res_Time_Days_Expected=" + String.valueOf(Res_Time_Days_Expected));
+			sb.append(",Price_Sat_Rate=" + String.valueOf(Price_Sat_Rate));
+			sb.append(",Type=" + Type);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row8Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.Profile_Code, other.Profile_Code);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFileInputExcel_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileInputExcel_2_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row8Struct row8 = new row8Struct();
+
+				/**
+				 * [tAdvancedHash_row8 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row8", false);
+				start_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row8";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row8");
+				}
+
+				int tos_count_tAdvancedHash_row8 = 0;
+
+				// connection name:row8
+				// source node:tFileInputExcel_2 - inputs:(after_tFileInputExcel_1)
+				// outputs:(row8,row8) | target node:tAdvancedHash_row8 - inputs:(row8)
+				// outputs:()
+				// linked node: tMap_1 - inputs:(row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Fact_Complains)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row8Struct>getLookup(matchingModeEnum_row8);
+
+				globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
+
+				/**
+				 * [tAdvancedHash_row8 begin ] stop
+				 */
+
+				/**
+				 * [tFileInputExcel_2 begin ] start
+				 */
+
+				ok_Hash.put("tFileInputExcel_2", false);
+				start_Hash.put("tFileInputExcel_2", System.currentTimeMillis());
+
+				currentComponent = "tFileInputExcel_2";
+
+				int tos_count_tFileInputExcel_2 = 0;
+
+				final String decryptedPassword_tFileInputExcel_2 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:9rNVIuJ1cSwymfyJIvYu9EqCDXl3Xt9Di4eWnA==");
+				String password_tFileInputExcel_2 = decryptedPassword_tFileInputExcel_2;
+				if (password_tFileInputExcel_2.isEmpty()) {
+					password_tFileInputExcel_2 = null;
+				}
+				class RegexUtil_tFileInputExcel_2 {
+
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, String oneSheetName,
+							boolean useRegex) {
+
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+
+						if (useRegex) {// this part process the regex issue
+
+							java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(oneSheetName);
+							for (org.apache.poi.ss.usermodel.Sheet sheet : workbook) {
+								String sheetName = sheet.getSheetName();
+								java.util.regex.Matcher matcher = pattern.matcher(sheetName);
+								if (matcher.matches()) {
+									if (sheet != null) {
+										list.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet);
+									}
+								}
+							}
+
+						} else {
+							org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+									.getSheet(oneSheetName);
+							if (sheet != null) {
+								list.add(sheet);
+							}
+
+						}
+
+						return list;
+					}
+
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, int index, boolean useRegex) {
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+								.getSheetAt(index);
+						if (sheet != null) {
+							list.add(sheet);
+						}
+						return list;
+					}
+
+				}
+				RegexUtil_tFileInputExcel_2 regexUtil_tFileInputExcel_2 = new RegexUtil_tFileInputExcel_2();
+
+				Object source_tFileInputExcel_2 = "D:/PIB/Data/Profiling.xlsx";
+				org.apache.poi.xssf.usermodel.XSSFWorkbook workbook_tFileInputExcel_2 = null;
+
+				if (source_tFileInputExcel_2 instanceof String) {
+					workbook_tFileInputExcel_2 = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create(new java.io.File((String) source_tFileInputExcel_2), password_tFileInputExcel_2);
+				} else if (source_tFileInputExcel_2 instanceof java.io.InputStream) {
+					workbook_tFileInputExcel_2 = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create((java.io.InputStream) source_tFileInputExcel_2, password_tFileInputExcel_2);
+				} else {
+					workbook_tFileInputExcel_2 = null;
+					throw new java.lang.Exception("The data source should be specified as Inputstream or File Path!");
+				}
+				try {
+
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_tFileInputExcel_2 = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.ss.usermodel.Sheet sheet_tFileInputExcel_2 : workbook_tFileInputExcel_2) {
+						sheetList_tFileInputExcel_2
+								.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet_tFileInputExcel_2);
+					}
+					if (sheetList_tFileInputExcel_2.size() <= 0) {
+						throw new RuntimeException("Special sheets not exist!");
+					}
+
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_FilterNull_tFileInputExcel_2 = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_FilterNull_tFileInputExcel_2 : sheetList_tFileInputExcel_2) {
+						if (sheet_FilterNull_tFileInputExcel_2 != null
+								&& sheetList_FilterNull_tFileInputExcel_2.iterator() != null
+								&& sheet_FilterNull_tFileInputExcel_2.iterator().hasNext()) {
+							sheetList_FilterNull_tFileInputExcel_2.add(sheet_FilterNull_tFileInputExcel_2);
+						}
+					}
+					sheetList_tFileInputExcel_2 = sheetList_FilterNull_tFileInputExcel_2;
+					if (sheetList_tFileInputExcel_2.size() > 0) {
+						int nb_line_tFileInputExcel_2 = 0;
+
+						int begin_line_tFileInputExcel_2 = 1;
+
+						int footer_input_tFileInputExcel_2 = 0;
+
+						int end_line_tFileInputExcel_2 = 0;
+						for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel_2 : sheetList_tFileInputExcel_2) {
+							end_line_tFileInputExcel_2 += (sheet_tFileInputExcel_2.getLastRowNum() + 1);
+						}
+						end_line_tFileInputExcel_2 -= footer_input_tFileInputExcel_2;
+						int limit_tFileInputExcel_2 = -1;
+						int start_column_tFileInputExcel_2 = 1 - 1;
+						int end_column_tFileInputExcel_2 = -1;
+
+						org.apache.poi.xssf.usermodel.XSSFRow row_tFileInputExcel_2 = null;
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel_2 = sheetList_tFileInputExcel_2
+								.get(0);
+						int rowCount_tFileInputExcel_2 = 0;
+						int sheetIndex_tFileInputExcel_2 = 0;
+						int currentRows_tFileInputExcel_2 = (sheetList_tFileInputExcel_2.get(0).getLastRowNum() + 1);
+
+						// for the number format
+						java.text.DecimalFormat df_tFileInputExcel_2 = new java.text.DecimalFormat(
+								"#.####################################");
+						char decimalChar_tFileInputExcel_2 = df_tFileInputExcel_2.getDecimalFormatSymbols()
+								.getDecimalSeparator();
+
+						for (int i_tFileInputExcel_2 = begin_line_tFileInputExcel_2; i_tFileInputExcel_2 < end_line_tFileInputExcel_2; i_tFileInputExcel_2++) {
+
+							int emptyColumnCount_tFileInputExcel_2 = 0;
+
+							if (limit_tFileInputExcel_2 != -1 && nb_line_tFileInputExcel_2 >= limit_tFileInputExcel_2) {
+								break;
+							}
+
+							while (i_tFileInputExcel_2 >= rowCount_tFileInputExcel_2 + currentRows_tFileInputExcel_2) {
+								rowCount_tFileInputExcel_2 += currentRows_tFileInputExcel_2;
+								sheet_tFileInputExcel_2 = sheetList_tFileInputExcel_2
+										.get(++sheetIndex_tFileInputExcel_2);
+								currentRows_tFileInputExcel_2 = (sheet_tFileInputExcel_2.getLastRowNum() + 1);
+							}
+							globalMap.put("tFileInputExcel_2_CURRENT_SHEET", sheet_tFileInputExcel_2.getSheetName());
+							if (rowCount_tFileInputExcel_2 <= i_tFileInputExcel_2) {
+								row_tFileInputExcel_2 = sheet_tFileInputExcel_2
+										.getRow(i_tFileInputExcel_2 - rowCount_tFileInputExcel_2);
+							}
+							row8 = null;
+							row8 = null;
+							int tempRowLength_tFileInputExcel_2 = 10;
+
+							int columnIndex_tFileInputExcel_2 = 0;
+
+							String[] temp_row_tFileInputExcel_2 = new String[tempRowLength_tFileInputExcel_2];
+							int excel_end_column_tFileInputExcel_2;
+							if (row_tFileInputExcel_2 == null) {
+								excel_end_column_tFileInputExcel_2 = 0;
+							} else {
+								excel_end_column_tFileInputExcel_2 = row_tFileInputExcel_2.getLastCellNum();
+							}
+							int actual_end_column_tFileInputExcel_2;
+							if (end_column_tFileInputExcel_2 == -1) {
+								actual_end_column_tFileInputExcel_2 = excel_end_column_tFileInputExcel_2;
+							} else {
+								actual_end_column_tFileInputExcel_2 = end_column_tFileInputExcel_2 > excel_end_column_tFileInputExcel_2
+										? excel_end_column_tFileInputExcel_2
+										: end_column_tFileInputExcel_2;
+							}
+							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel_2 = null;
+							for (int i = 0; i < tempRowLength_tFileInputExcel_2; i++) {
+								if (i + start_column_tFileInputExcel_2 < actual_end_column_tFileInputExcel_2) {
+									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel_2 = row_tFileInputExcel_2
+											.getCell(i + start_column_tFileInputExcel_2);
+									if (cell_tFileInputExcel_2 != null) {
+										switch (cell_tFileInputExcel_2.getCellType()) {
+										case STRING:
+											temp_row_tFileInputExcel_2[i] = cell_tFileInputExcel_2
+													.getRichStringCellValue().getString();
+											break;
+										case NUMERIC:
+											if (org.apache.poi.ss.usermodel.DateUtil
+													.isCellDateFormatted(cell_tFileInputExcel_2)) {
+												temp_row_tFileInputExcel_2[i] = cell_tFileInputExcel_2
+														.getDateCellValue().toString();
+											} else {
+												temp_row_tFileInputExcel_2[i] = df_tFileInputExcel_2
+														.format(cell_tFileInputExcel_2.getNumericCellValue());
+											}
+											break;
+										case BOOLEAN:
+											temp_row_tFileInputExcel_2[i] = String
+													.valueOf(cell_tFileInputExcel_2.getBooleanCellValue());
+											break;
+										case FORMULA:
+											switch (cell_tFileInputExcel_2.getCachedFormulaResultType()) {
+											case STRING:
+												temp_row_tFileInputExcel_2[i] = cell_tFileInputExcel_2
+														.getRichStringCellValue().getString();
+												break;
+											case NUMERIC:
+												if (org.apache.poi.ss.usermodel.DateUtil
+														.isCellDateFormatted(cell_tFileInputExcel_2)) {
+													temp_row_tFileInputExcel_2[i] = cell_tFileInputExcel_2
+															.getDateCellValue().toString();
+												} else {
+													ne_tFileInputExcel_2 = new org.apache.poi.ss.formula.eval.NumberEval(
+															cell_tFileInputExcel_2.getNumericCellValue());
+													temp_row_tFileInputExcel_2[i] = ne_tFileInputExcel_2
+															.getStringValue();
+												}
+												break;
+											case BOOLEAN:
+												temp_row_tFileInputExcel_2[i] = String
+														.valueOf(cell_tFileInputExcel_2.getBooleanCellValue());
+												break;
+											default:
+												temp_row_tFileInputExcel_2[i] = "";
+											}
+											break;
+										default:
+											temp_row_tFileInputExcel_2[i] = "";
+										}
+									} else {
+										temp_row_tFileInputExcel_2[i] = "";
+									}
+
+								} else {
+									temp_row_tFileInputExcel_2[i] = "";
+								}
+							}
+							boolean whetherReject_tFileInputExcel_2 = false;
+							row8 = new row8Struct();
+							int curColNum_tFileInputExcel_2 = -1;
+							String curColName_tFileInputExcel_2 = "";
+							try {
+								columnIndex_tFileInputExcel_2 = 0;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Profile_Code";
+
+									row8.Profile_Code = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Profile_Code = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 1;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Sexe";
+
+									row8.Sexe = temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2];
+								} else {
+									row8.Sexe = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 2;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Age";
+
+									row8.Age = temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2];
+								} else {
+									row8.Age = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 3;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Marital_Status";
+
+									row8.Marital_Status = temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2];
+								} else {
+									row8.Marital_Status = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 4;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Change_Freq";
+
+									row8.Change_Freq = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Change_Freq = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 5;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Services_Sat_Rate_On5";
+
+									row8.Services_Sat_Rate_On5 = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Services_Sat_Rate_On5 = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 6;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Complain_Sat_Rate";
+
+									row8.Complain_Sat_Rate = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Complain_Sat_Rate = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 7;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Res_Time_Days_Expected";
+
+									row8.Res_Time_Days_Expected = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Res_Time_Days_Expected = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 8;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Price_Sat_Rate";
+
+									row8.Price_Sat_Rate = ParserUtils.parseTo_Float(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2], null,
+											'.' == decimalChar_tFileInputExcel_2 ? null
+													: decimalChar_tFileInputExcel_2));
+								} else {
+									row8.Price_Sat_Rate = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+								columnIndex_tFileInputExcel_2 = 9;
+
+								if (temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2].length() > 0) {
+									curColNum_tFileInputExcel_2 = columnIndex_tFileInputExcel_2
+											+ start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "Type";
+
+									row8.Type = temp_row_tFileInputExcel_2[columnIndex_tFileInputExcel_2];
+								} else {
+									row8.Type = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+
+								nb_line_tFileInputExcel_2++;
+
+							} catch (java.lang.Exception e) {
+								whetherReject_tFileInputExcel_2 = true;
+								System.err.println(e.getMessage());
+								row8 = null;
+							}
+
+							/**
+							 * [tFileInputExcel_2 begin ] stop
+							 */
+
+							/**
+							 * [tFileInputExcel_2 main ] start
+							 */
+
+							currentComponent = "tFileInputExcel_2";
+
+							tos_count_tFileInputExcel_2++;
+
+							/**
+							 * [tFileInputExcel_2 main ] stop
+							 */
+
+							/**
+							 * [tFileInputExcel_2 process_data_begin ] start
+							 */
+
+							currentComponent = "tFileInputExcel_2";
+
+							/**
+							 * [tFileInputExcel_2 process_data_begin ] stop
+							 */
+// Start of branch "row8"
+							if (row8 != null) {
+
+								/**
+								 * [tAdvancedHash_row8 main ] start
+								 */
+
+								currentComponent = "tAdvancedHash_row8";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "row8");
+								}
+
+								row8Struct row8_HashRow = new row8Struct();
+
+								row8_HashRow.Profile_Code = row8.Profile_Code;
+
+								row8_HashRow.Sexe = row8.Sexe;
+
+								row8_HashRow.Age = row8.Age;
+
+								row8_HashRow.Marital_Status = row8.Marital_Status;
+
+								row8_HashRow.Change_Freq = row8.Change_Freq;
+
+								row8_HashRow.Services_Sat_Rate_On5 = row8.Services_Sat_Rate_On5;
+
+								row8_HashRow.Complain_Sat_Rate = row8.Complain_Sat_Rate;
+
+								row8_HashRow.Res_Time_Days_Expected = row8.Res_Time_Days_Expected;
+
+								row8_HashRow.Price_Sat_Rate = row8.Price_Sat_Rate;
+
+								row8_HashRow.Type = row8.Type;
+
+								tHash_Lookup_row8.put(row8_HashRow);
+
+								tos_count_tAdvancedHash_row8++;
+
+								/**
+								 * [tAdvancedHash_row8 main ] stop
+								 */
+
+								/**
+								 * [tAdvancedHash_row8 process_data_begin ] start
+								 */
+
+								currentComponent = "tAdvancedHash_row8";
+
+								/**
+								 * [tAdvancedHash_row8 process_data_begin ] stop
+								 */
+
+								/**
+								 * [tAdvancedHash_row8 process_data_end ] start
+								 */
+
+								currentComponent = "tAdvancedHash_row8";
+
+								/**
+								 * [tAdvancedHash_row8 process_data_end ] stop
+								 */
+
+							} // End of branch "row8"
+
+							/**
+							 * [tFileInputExcel_2 process_data_end ] start
+							 */
+
+							currentComponent = "tFileInputExcel_2";
+
+							/**
+							 * [tFileInputExcel_2 process_data_end ] stop
+							 */
+
+							/**
+							 * [tFileInputExcel_2 end ] start
+							 */
+
+							currentComponent = "tFileInputExcel_2";
+
+						}
+
+						globalMap.put("tFileInputExcel_2_NB_LINE", nb_line_tFileInputExcel_2);
+
+					}
+
+				} finally {
+
+					if (!(source_tFileInputExcel_2 instanceof java.io.InputStream)) {
+						workbook_tFileInputExcel_2.getPackage().revert();
+					}
+
+				}
+
+				ok_Hash.put("tFileInputExcel_2", true);
+				end_Hash.put("tFileInputExcel_2", System.currentTimeMillis());
+
+				/**
+				 * [tFileInputExcel_2 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row8 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row8";
+
+				tHash_Lookup_row8.endPut();
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row8");
+				}
+
+				ok_Hash.put("tAdvancedHash_row8", true);
+				end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row8 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tFileInputExcel_2 finally ] start
+				 */
+
+				currentComponent = "tFileInputExcel_2";
+
+				/**
+				 * [tFileInputExcel_2 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row8 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row8";
+
+				/**
+				 * [tAdvancedHash_row8 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tFileInputExcel_2_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -7181,6 +8484,6 @@ public class Fact_Complains implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 219995 characters generated by Talend Open Studio for Data Integration on the
- * April 1, 2022 11:38:44 AM BST
+ * 263476 characters generated by Talend Open Studio for Data Integration on the
+ * April 3, 2022 12:23:19 AM BST
  ************************************************************************************************/

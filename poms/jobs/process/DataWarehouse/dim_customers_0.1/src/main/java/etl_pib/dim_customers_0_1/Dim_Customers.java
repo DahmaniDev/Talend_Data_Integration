@@ -1545,7 +1545,7 @@ public class Dim_Customers implements TalendJob {
 				dbUser_tDBOutput_1 = "postgres";
 
 				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:EQJcwykQyjDyEI+DfdRw0CPAnTbcsmHR06zIO4qCq6w=");
+						.decryptPassword("enc:routine.encryption.key.v1:BNNX6jB442m5QHZdimBqOT1Vz8jfK34aiTbVoQJEIy0=");
 
 				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
 
@@ -1677,7 +1677,7 @@ public class Dim_Customers implements TalendJob {
 				String dbUser_tDBInput_1 = "postgres";
 
 				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:3N6obMyJllxejDojIwDo62cwEWqK3uyhC5bW5I+DRHU=");
+						.decryptPassword("enc:routine.encryption.key.v1:c+dk34CMmx2tfwdEVfD/IFAANuyu63gYni7YA4bs/9U=");
 
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 
@@ -2947,7 +2947,7 @@ public class Dim_Customers implements TalendJob {
 				String dbUser_tDBInput_2 = "postgres";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:8GirsGu23Qd+8tRFzKkMSW0QZ/LpSBXKBaLm5zXbAu0=");
+						.decryptPassword("enc:routine.encryption.key.v1:q8QqFfIpN7UiZOJ5IBuUHLwn8lsXDm5z1kQKLqMXy9E=");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -3334,12 +3334,6 @@ public class Dim_Customers implements TalendJob {
 			return this.ProfileID;
 		}
 
-		public String Profile_Code;
-
-		public String getProfile_Code() {
-			return this.Profile_Code;
-		}
-
 		public String Type;
 
 		public String getType() {
@@ -3362,36 +3356,6 @@ public class Dim_Customers implements TalendJob {
 
 		public String getMarital_Status() {
 			return this.Marital_Status;
-		}
-
-		public Float Change_Freq;
-
-		public Float getChange_Freq() {
-			return this.Change_Freq;
-		}
-
-		public Float Services_Sat_Rate_On5;
-
-		public Float getServices_Sat_Rate_On5() {
-			return this.Services_Sat_Rate_On5;
-		}
-
-		public Float Complain_Sat_Rate;
-
-		public Float getComplain_Sat_Rate() {
-			return this.Complain_Sat_Rate;
-		}
-
-		public Float Res_Time_Days_Expected;
-
-		public Float getRes_Time_Days_Expected() {
-			return this.Res_Time_Days_Expected;
-		}
-
-		public Float Price_Sat_Rate;
-
-		public Float getPrice_Sat_Rate() {
-			return this.Price_Sat_Rate;
 		}
 
 		@Override
@@ -3452,16 +3416,10 @@ public class Dim_Customers implements TalendJob {
 		public void copyDataTo(row4Struct other) {
 
 			other.ProfileID = this.ProfileID;
-			other.Profile_Code = this.Profile_Code;
 			other.Type = this.Type;
 			other.Sexe = this.Sexe;
 			other.Age = this.Age;
 			other.Marital_Status = this.Marital_Status;
-			other.Change_Freq = this.Change_Freq;
-			other.Services_Sat_Rate_On5 = this.Services_Sat_Rate_On5;
-			other.Complain_Sat_Rate = this.Complain_Sat_Rate;
-			other.Res_Time_Days_Expected = this.Res_Time_Days_Expected;
-			other.Price_Sat_Rate = this.Price_Sat_Rate;
 
 		}
 
@@ -3581,44 +3539,7 @@ public class Dim_Customers implements TalendJob {
 
 				this.ProfileID = dis.readInt();
 
-				this.Profile_Code = readString(dis, ois);
-
 				this.Type = readString(dis, ois);
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.Change_Freq = null;
-				} else {
-					this.Change_Freq = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.Services_Sat_Rate_On5 = null;
-				} else {
-					this.Services_Sat_Rate_On5 = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.Complain_Sat_Rate = null;
-				} else {
-					this.Complain_Sat_Rate = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.Res_Time_Days_Expected = null;
-				} else {
-					this.Res_Time_Days_Expected = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.Price_Sat_Rate = null;
-				} else {
-					this.Price_Sat_Rate = dis.readFloat();
-				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -3635,44 +3556,7 @@ public class Dim_Customers implements TalendJob {
 
 				dos.writeInt(this.ProfileID);
 
-				writeString(this.Profile_Code, dos, oos);
-
 				writeString(this.Type, dos, oos);
-
-				if (this.Change_Freq == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.Change_Freq);
-				}
-
-				if (this.Services_Sat_Rate_On5 == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.Services_Sat_Rate_On5);
-				}
-
-				if (this.Complain_Sat_Rate == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.Complain_Sat_Rate);
-				}
-
-				if (this.Res_Time_Days_Expected == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.Res_Time_Days_Expected);
-				}
-
-				if (this.Price_Sat_Rate == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.Price_Sat_Rate);
-				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -3686,16 +3570,10 @@ public class Dim_Customers implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("ProfileID=" + String.valueOf(ProfileID));
-			sb.append(",Profile_Code=" + Profile_Code);
 			sb.append(",Type=" + Type);
 			sb.append(",Sexe=" + Sexe);
 			sb.append(",Age=" + Age);
 			sb.append(",Marital_Status=" + Marital_Status);
-			sb.append(",Change_Freq=" + String.valueOf(Change_Freq));
-			sb.append(",Services_Sat_Rate_On5=" + String.valueOf(Services_Sat_Rate_On5));
-			sb.append(",Complain_Sat_Rate=" + String.valueOf(Complain_Sat_Rate));
-			sb.append(",Res_Time_Days_Expected=" + String.valueOf(Res_Time_Days_Expected));
-			sb.append(",Price_Sat_Rate=" + String.valueOf(Price_Sat_Rate));
 			sb.append("]");
 
 			return sb.toString();
@@ -3820,7 +3698,7 @@ public class Dim_Customers implements TalendJob {
 				String dbUser_tDBInput_3 = "postgres";
 
 				final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:tcHD1cZlW+jSHQTGXmyAxGWn70qxLv9+6ar2OIxtpeU=");
+						.decryptPassword("enc:routine.encryption.key.v1:uzzotBK6Cm+Uhk5jA58gCYBkNo86GlbFL78pM7RdacY=");
 
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 
@@ -3833,13 +3711,9 @@ public class Dim_Customers implements TalendJob {
 
 				java.sql.Statement stmt_tDBInput_3 = conn_tDBInput_3.createStatement();
 
-				String dbquery_tDBInput_3 = "SELECT \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"ProfileID\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Profile_C"
-						+ "ode\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Type\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Sexe\", \n  \"PI"
-						+ "B_DW\".\"public\".\"Dim_Profiling\".\"Age\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Marital_Status\", \n  \"PIB_DW"
-						+ "\".\"public\".\"Dim_Profiling\".\"Change_Freq\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Services_Sat_Rate_On5\", \n"
-						+ "  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Complain_Sat_Rate\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Res_Time_D"
-						+ "ays_Expected\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Price_Sat_Rate\"\nFROM \"PIB_DW\".\"public\".\"Dim_Profiling"
-						+ "\"";
+				String dbquery_tDBInput_3 = "SELECT \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"ProfileID\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Type\", \n"
+						+ "  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Sexe\", \n  \"PIB_DW\".\"public\".\"Dim_Profiling\".\"Age\", \n  \"PIB_DW\".\""
+						+ "public\".\"Dim_Profiling\".\"Marital_Status\"\nFROM \"PIB_DW\".\"public\".\"Dim_Profiling\"";
 
 				globalMap.put("tDBInput_3_QUERY", dbquery_tDBInput_3);
 				java.sql.ResultSet rs_tDBInput_3 = null;
@@ -3864,79 +3738,28 @@ public class Dim_Customers implements TalendJob {
 							}
 						}
 						if (colQtyInRs_tDBInput_3 < 2) {
-							row4.Profile_Code = null;
-						} else {
-
-							row4.Profile_Code = routines.system.JDBCUtil.getString(rs_tDBInput_3, 2, false);
-						}
-						if (colQtyInRs_tDBInput_3 < 3) {
 							row4.Type = null;
 						} else {
 
-							row4.Type = routines.system.JDBCUtil.getString(rs_tDBInput_3, 3, false);
+							row4.Type = routines.system.JDBCUtil.getString(rs_tDBInput_3, 2, false);
 						}
-						if (colQtyInRs_tDBInput_3 < 4) {
+						if (colQtyInRs_tDBInput_3 < 3) {
 							row4.Sexe = null;
 						} else {
 
-							row4.Sexe = routines.system.JDBCUtil.getString(rs_tDBInput_3, 4, false);
+							row4.Sexe = routines.system.JDBCUtil.getString(rs_tDBInput_3, 3, false);
 						}
-						if (colQtyInRs_tDBInput_3 < 5) {
+						if (colQtyInRs_tDBInput_3 < 4) {
 							row4.Age = null;
 						} else {
 
-							row4.Age = routines.system.JDBCUtil.getString(rs_tDBInput_3, 5, false);
+							row4.Age = routines.system.JDBCUtil.getString(rs_tDBInput_3, 4, false);
 						}
-						if (colQtyInRs_tDBInput_3 < 6) {
+						if (colQtyInRs_tDBInput_3 < 5) {
 							row4.Marital_Status = null;
 						} else {
 
-							row4.Marital_Status = routines.system.JDBCUtil.getString(rs_tDBInput_3, 6, false);
-						}
-						if (colQtyInRs_tDBInput_3 < 7) {
-							row4.Change_Freq = null;
-						} else {
-
-							row4.Change_Freq = rs_tDBInput_3.getFloat(7);
-							if (rs_tDBInput_3.wasNull()) {
-								row4.Change_Freq = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_3 < 8) {
-							row4.Services_Sat_Rate_On5 = null;
-						} else {
-
-							row4.Services_Sat_Rate_On5 = rs_tDBInput_3.getFloat(8);
-							if (rs_tDBInput_3.wasNull()) {
-								row4.Services_Sat_Rate_On5 = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_3 < 9) {
-							row4.Complain_Sat_Rate = null;
-						} else {
-
-							row4.Complain_Sat_Rate = rs_tDBInput_3.getFloat(9);
-							if (rs_tDBInput_3.wasNull()) {
-								row4.Complain_Sat_Rate = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_3 < 10) {
-							row4.Res_Time_Days_Expected = null;
-						} else {
-
-							row4.Res_Time_Days_Expected = rs_tDBInput_3.getFloat(10);
-							if (rs_tDBInput_3.wasNull()) {
-								row4.Res_Time_Days_Expected = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_3 < 11) {
-							row4.Price_Sat_Rate = null;
-						} else {
-
-							row4.Price_Sat_Rate = rs_tDBInput_3.getFloat(11);
-							if (rs_tDBInput_3.wasNull()) {
-								row4.Price_Sat_Rate = null;
-							}
+							row4.Marital_Status = routines.system.JDBCUtil.getString(rs_tDBInput_3, 5, false);
 						}
 
 						/**
@@ -3979,8 +3802,6 @@ public class Dim_Customers implements TalendJob {
 
 						row4_HashRow.ProfileID = row4.ProfileID;
 
-						row4_HashRow.Profile_Code = row4.Profile_Code;
-
 						row4_HashRow.Type = row4.Type;
 
 						row4_HashRow.Sexe = row4.Sexe;
@@ -3988,16 +3809,6 @@ public class Dim_Customers implements TalendJob {
 						row4_HashRow.Age = row4.Age;
 
 						row4_HashRow.Marital_Status = row4.Marital_Status;
-
-						row4_HashRow.Change_Freq = row4.Change_Freq;
-
-						row4_HashRow.Services_Sat_Rate_On5 = row4.Services_Sat_Rate_On5;
-
-						row4_HashRow.Complain_Sat_Rate = row4.Complain_Sat_Rate;
-
-						row4_HashRow.Res_Time_Days_Expected = row4.Res_Time_Days_Expected;
-
-						row4_HashRow.Price_Sat_Rate = row4.Price_Sat_Rate;
 
 						tHash_Lookup_row4.put(row4_HashRow);
 
@@ -4499,6 +4310,6 @@ public class Dim_Customers implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 135181 characters generated by Talend Open Studio for Data Integration on the
- * April 1, 2022 10:18:44 AM BST
+ * 128500 characters generated by Talend Open Studio for Data Integration on the
+ * April 3, 2022 12:22:30 AM BST
  ************************************************************************************************/

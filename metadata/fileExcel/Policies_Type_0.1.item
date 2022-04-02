@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_OL4hALKNEey9-vRt36eOxQ" name="Policies_Type" id="_OLXjoLKNEey9-vRt36eOxQ" dataPackage="_OL4hAbKNEey9-vRt36eOxQ" Server="Localhost 127.0.0.1" FilePath="D:/PIB/Data/Policies_Type.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" UseLimit="true" LimitValue="5" FirstLineCaption="true" SheetName="Insurance_types" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Insurance_types:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_OL4hAbKNEey9-vRt36eOxQ" name="default" dataManager="_OL4hALKNEey9-vRt36eOxQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_OL4hArKNEey9-vRt36eOxQ" id="_F-g28LKNEey9-vRt36eOxQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OL4hA7KNEey9-vRt36eOxQ" label="Ins_Type_Code" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OL4hBLKNEey9-vRt36eOxQ" label="Type_description" length="18" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
