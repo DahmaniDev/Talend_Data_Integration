@@ -1,0 +1,5 @@
+Change_Freq : Fréquence de changement de compagnie d'assurance [0 : No Change ; 1 : Change]
+Prod_Sat_Rate_On5 : Rating de Satisfaction sur les Produits[0 -> 5]
+Complain_Sat_Rate : Rating de Satisfaction sur le traitement des réclamations [0 : Pas Satisfait ; 1 : Satisfait]
+Res_Time_Days_Expected : Nombre de jours attendu pour la résolution d'une plainte
+Price_Sat_Rate : Rating de Satisfaction sur les Prix des Produits [0 : Pas Satisfait ; 1 : Satisfait]
